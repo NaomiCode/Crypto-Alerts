@@ -1,0 +1,13 @@
+pymongo
+python-binance
+requests
+pyTelegramBotAPI
+python-dotenv
+pytz
+numpy
+pandas
+typing_extensions
+websockets
+python-dotenv
+pymongo[srv]
+pyarrow
