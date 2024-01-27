@@ -5,6 +5,7 @@ from logic.fibo import fibo_retracement
 from logic.sharp import sharp_finder
 from project_types.types import Kline, Tick
 
+
 def ticker_format(message: dict) -> Tick:
     candle = message['k']
     return Tick(_id=datetime.datetime.fromtimestamp(float(message['E']) / 1000, pytz.UTC),
@@ -32,7 +33,7 @@ def websocket_handler(res):
     if "k" in res.keys():
         if res['k']['x'] is True:
             kline_handler(res)
-            sharp_finder(res['s'], res['k']['i'],3)
+            sharp_finder(res['s'], res['k']['i'], 3)
             fibo_retracement(res['s'], res['k']['i'], 10)
         if res['k']['i'] == '1m' and res['k']['x'] is False:
             ticker_handler(res)

@@ -70,7 +70,7 @@ if __name__ == '__main__':
     monitor_worker_outbound_queue = multiprocessing.Queue()
     add_monitor_to_queue(main_queue)
     candle_stick_data_queue = multiprocessing.Queue()
-    telegram = multiprocessing.Process(target=start_bot, args=(os.getenv("BOT_TOKEN"), main_queue))
+    telegram = multiprocessing.Process(target=start_bot, args=(os.getenv("TELEGRAM_BOT_TOKEN"), main_queue))
     monitor = multiprocessing.Process(target=monitor_worker, args=(main_queue, monitor_worker_outbound_queue))
     data_handler = multiprocessing.Process(target=twm, args=(monitor_worker_outbound_queue,))
     telegram.start()

@@ -19,7 +19,7 @@ sudo systemctl status mongod
 4. then navigate to project directory and create a virtual environment and activate it
 
 ```bash
-cd Telegram-Signal-Bot && python3 -m venv venv && source venv/bin/activate
+git clone https://github.com/naomicode/crypto-alert.git && cd Crypto-Alert && python3 -m venv venv && source venv/bin/activate
 ```
 5. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install dependencies.
 
